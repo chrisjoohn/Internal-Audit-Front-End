@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    </head>
+    <title>
+        Internal Audit Management System
+    </title>
+    <body>
+        <div class="header-container">
+            <div id="header">
+                <img id="pup_logo" src="images/pup_logo.png" alt="PUP LOGO"/>
+                <br/>
+                <h1>
+                    <a id="logo" href="#">
+                        POLYTECHNIC UNIVERSITY OF THE PHILIPPINES
+                    </a>
+                </h1>
+                <p id="slogan">The Country's 1st PolytechnicU</p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="row" id="content">
+                <div class="col-sm-4" id="send">
+                    <!--SEND REQUEST-->
+                    <h3>
+                        Send Request    
+                    </h3>
+                    <p>
+                        Requesting a document needs something to be requested!
+                    </p>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sendRequest-modal">Send Request</button>
+                    <div class="modal fade" id="sendRequest-modal" role="dialog">
+                        <div class="modal-dialog">
+                            <!--sendRequest-modal Content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Send Request</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="requestForm" runat="server">
+                                        <div class="form-group">
+                                            <label for="trackingNumber">Tracking Number</label><br/>
+                                            <input type="number" id="trackingNumber" name="tracking_number" class="form-control" required>
+                                            <h3 id="detail1">Requestor's Details</h3>
+                                            <label for="name">Name</label>
+                                            <input type="text" id="name" name="requestor_name" class="form-control" required>
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email" name="email" class="form-control" required>
+                                            <label for="phone">Phone</label>
+                                            <input type="number" id="phone" name="phone" class="form-control" required>
+                                            <label for="designation">Designation</label>
+                                            <select id="designation" name="designation" class="form-control" required>
+                                                <option selected="selected" value="student">Student</option>
+                                                <option value="faculty">Faculty</option>
+                                                <option value="admin">Admin</option>
+                                            </select>
+                                            <label for="branch/campus">Branch/Campus</label>
+                                            <select id="branch/campus" name="branch/campus" class="form-control" required>
+                                                <option selected="selected" value="main">PUP Mabini Campus</option>
+                                                <option value="">PUP San Juan</option>
+                                            </select>
+                                            <label for="sector">Sector</label>
+                                            <!--VALUE TO BE SET-->
+                                            <select id="sector" name="sector" class="form-control" required>
+                                                <option selected="selected" value="">Office of the President</option>
+                                                <option value="">Office of the Executive Vice-President</option>
+                                                <option value="">Office of the Vice-President for Academic Affairs</option>
+                                                <option value="">Office of the Vice-President for Student Affairs and Services</option>
+                                                <option value="">Office of the Vice-President for Administration</option>
+                                                <option value="">Office of the Vice-President for Finance</option>
+                                                <option value="">Office of the Vice-President for Research, Extension and Development </option>
+                                                <option value="">Office of the Vice-President for Branches and Satellite Campuses </option>
+                                            </select>
+                                            <h3 id="detail2">Request Details</h3>
+                                            <label for="event_name">Event Name</label>
+                                            <input type="text" id="event_name" name="event_name" class="form-control" required>
+                                            <label for="start_date">Event Start Date</label>
+                                            <input type="date" id="start_date" name="start_date" class="form-control" required>
+                                            <label for="end_date">Event End Date</label>
+                                            <input type="date" id="end_date" name="end_date" class="form-control" required>
+                                            <label for="notes">Note to the Admin</label>
+                                            <textarea type="text" id="notes" name="notes" class="form-control"></textarea>
+                                            <p id="reminder">* Note: Files should be compressed and in zip file. File name should be your tracking number. *</p>
+                                            <input type="file" accept=".zip" id="upload_file">
+                                            <button type="button" id="btnUpload" class="btn btn-primary">Upload</button>
+                                            <div id="dvProgress" class="progress" style="width: 200px, min-width: 2em;">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4" id="update">
+                    <!--UPDATE REQUEST-->
+                    <h3>
+                        Update Request
+                    </h3>
+                    <p>
+                        You can update your request! just put in here everything that I need
+                    </p>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#updateRequest-modal">Update Request</button>
+                    <div class="modal fade" id="updateRequest-modal" role="dialog">
+                        <div class="modal-dialog">
+                            <!--updateRequest-modal Content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Update Request</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="updateForm" runat="server">
+                                        <div class="form-group">
+                                            <label for="trackingNumber">Tracking Number</label><br/>
+                                            <input type="number" id="trackingNumber" name="tracking_number" class="form-control" required>
+                                            <h3 id="detail2">Request Details</h3>
+                                            <label for="event_name">Event Name</label>
+                                            <input type="text" id="event_name" name="event_name" class="form-control" required>
+                                            <label for="start_date">Event Start Date</label>
+                                            <input type="date" id="start_date" name="start_date" class="form-control" required>
+                                            <label for="end_date">Event End Date</label>
+                                            <input type="date" id="end_date" name="end_date" class="form-control" required>
+                                            <label for="notes">Note to the Admin</label>
+                                            <textarea type="text" id="notes" name="notes" class="form-control"></textarea>
+                                            <p id="reminder">* Note: Files should be compressed and in zip file. File name should be your tracking number. *</p>
+                                            <input type="file" accept=".zip" id="upload_file">
+                                            <button type="submit" class="btn btn-primary" value="upload"Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4" id="inquiry">
+                    <!--INQUIRY-->
+                    <h3>
+                        Inquiry
+                    </h3>
+                    <p>
+                        Have questions? Feel free to ask us anytime just hit the inquire button for more info! Thanks.
+                    </p>
+                    <button type="button" class="btn btn-info">Inquiry</button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+                    <div class="row" style="padding: 10px;">
+                        <p id="footer">
+                            © 2018 Polytechnic University of the Philippines
+                        </p>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+    </body>
+    <script type="text/javascript">
+        $(function () {
+            $('#btnUpload').on("click", function () {
+                var sizeInKb = parseFloat($('#fuUpload').prop("files")['0'].size / 1024).toFixed(2);
+                var fileName = $('#fuUpload').prop("files")['0'].name;
+                uploadProgress = $('#dvProgress').progressbarManager({
+                    totalValue: sizeInKb,
+                    initValue: '0kb',
+                    animate: true,
+                    stripe: true,
+                    style: 'primary'
+                });
+                var chunk = 0;
+                var uploading = setInterval(function () {
+                    uploadProgress.setValue(chunk);
+                    if (uploadProgress.isComplete()) {
+                        clearInterval(uploading);
+                        uploadProgress.style('success');
+                    }
+                    chunk += 500;
+                }, 500);
+            });
+        });
+    </script>
+</html>
