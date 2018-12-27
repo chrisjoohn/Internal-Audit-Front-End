@@ -33,7 +33,14 @@ p#slogan{
     font-family: 'Times New Roman', Times, serif;
 }
 
-#send, #update, #inquiry{
+#send, #update{
+    padding-bottom: 10px;
+    height: 200px;
+    padding: 30px;
+    border-right: 1px solid black;
+}
+
+#inquiry{
     padding-bottom: 10px;
     height: 200px;
     padding: 30px;

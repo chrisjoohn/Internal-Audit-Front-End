@@ -63,9 +63,28 @@
                                             </select>
                                             <label for="branch/campus">Branch/Campus</label>
                                             <select id="branch/campus" name="branch/campus" class="form-control" required>
-                                                <option selected="selected" value="main">PUP Mabini Campus</option>
+                                                <option selected="selected" value="">PUP Mabini Campus</option>
+                                                <option value="">PUP Taguig</option>
+                                                <option value="">PUP Quezon City</option>
                                                 <option value="">PUP San Juan</option>
-                                            </select>
+                                                <option value="">PUP Parañaque</option>
+                                                <option value="">PUP Bataan</option>
+                                                <option value="">PUP Sta. Maria, Bulacan</option>
+                                                <option value="">PUP Pulilan, Bulacan</option>
+                                                <option value="">PUP Cabiao, Nueva Ecija</option>
+                                                <option value="">PUP Lopez, Quezon</option>
+                                                <option value="">PUP Mulanay, Quezon</option>
+                                                <option value="">PUP Unisan, Quezon</option>
+                                                <option value="">PUP Ragay, Camarines Sur</option>
+                                                <option value="">PUP Sto. Tomas, Batangas</option>
+                                                <option value="">PUP Maragondon, Cavite</option>
+                                                <option value="">PUP Bansud, Oriental Mindoro</option>
+                                                <option value="">PUP Sablayan, Occidental Mindoro</option>
+                                                <option value="">PUP Biñan, Laguna</option>
+                                                <option value="">PUP San Pedro, Laguna</option>
+                                                <option value="">PUP Sta. Rosa, Laguna</option>
+                                                <option value="">PUP Calauan, Laguna</option>
+                                            </select>   
                                             <label for="sector">Sector</label>
                                             <!--VALUE TO BE SET-->
                                             <select id="sector" name="sector" class="form-control" required>
@@ -89,9 +108,7 @@
                                             <textarea type="text" id="notes" name="notes" class="form-control"></textarea>
                                             <p id="reminder">* Note: Files should be compressed and in zip file. File name should be your tracking number. *</p>
                                             <input type="file" accept=".zip" id="upload_file">
-                                            <button type="button" id="btnUpload" class="btn btn-primary">Upload</button>
-                                            <div id="dvProgress" class="progress" style="width: 200px, min-width: 2em;">
-                                            </div>
+                                            <button type="button" class="btn btn-primary" value="upload">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -132,7 +149,7 @@
                                             <textarea type="text" id="notes" name="notes" class="form-control"></textarea>
                                             <p id="reminder">* Note: Files should be compressed and in zip file. File name should be your tracking number. *</p>
                                             <input type="file" accept=".zip" id="upload_file">
-                                            <button type="submit" class="btn btn-primary" value="upload"Submit</button>
+                                            <button type="submit" class="btn btn-primary" value="upload">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -148,7 +165,67 @@
                     <p>
                         Have questions? Feel free to ask us anytime just hit the inquire button for more info! Thanks.
                     </p>
-                    <button type="button" class="btn btn-info">Inquiry</button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#inquiry-modal">Inquiry</button>
+                    <div class="modal fade" id="inquiry-modal" role="dialog">
+                        <div class="modal-dialog">
+                            <!--inquiry-modal Content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Inquiry</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="inquiryForm" runat="server">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email" name="email" class="form-control" required>
+                                            <label for="name">Name</label>
+                                            <input type="text" id="name" name="name" class="form-control" required>
+                                            <label for="sector">Sector</label>
+                                            <!--VALUE TO BE SET-->
+                                            <select id="sector" name="sector" class="form-control" required>
+                                                <option selected="selected" value="">Office of the President</option>
+                                                <option value="">Office of the Executive Vice-President</option>
+                                                <option value="">Office of the Vice-President for Academic Affairs</option>
+                                                <option value="">Office of the Vice-President for Student Affairs and Services</option>
+                                                <option value="">Office of the Vice-President for Administration</option>
+                                                <option value="">Office of the Vice-President for Finance</option>
+                                                <option value="">Office of the Vice-President for Research, Extension and Development </option>
+                                                <option value="">Office of the Vice-President for Branches and Satellite Campuses </option>
+                                            </select>
+                                            <label for="branch/campus">Branch/Campus</label>
+                                            <select id="branch/campus" name="branch/campus" class="form-control" required>
+                                                <option selected="selected" value="">PUP Mabini Campus</option>
+                                                <option value="">PUP Taguig</option>
+                                                <option value="">PUP Quezon City</option>
+                                                <option value="">PUP San Juan</option>
+                                                <option value="">PUP Parañaque</option>
+                                                <option value="">PUP Bataan</option>
+                                                <option value="">PUP Sta. Maria, Bulacan</option>
+                                                <option value="">PUP Pulilan, Bulacan</option>
+                                                <option value="">PUP Cabiao, Nueva Ecija</option>
+                                                <option value="">PUP Lopez, Quezon</option>
+                                                <option value="">PUP Mulanay, Quezon</option>
+                                                <option value="">PUP Unisan, Quezon</option>
+                                                <option value="">PUP Ragay, Camarines Sur</option>
+                                                <option value="">PUP Sto. Tomas, Batangas</option>
+                                                <option value="">PUP Maragondon, Cavite</option>
+                                                <option value="">PUP Bansud, Oriental Mindoro</option>
+                                                <option value="">PUP Sablayan, Occidental Mindoro</option>
+                                                <option value="">PUP Biñan, Laguna</option>
+                                                <option value="">PUP San Pedro, Laguna</option>
+                                                <option value="">PUP Sta. Rosa, Laguna</option>
+                                                <option value="">PUP Calauan, Laguna</option>
+                                            </select>   
+                                            <label for="notes">Note to the Admin</label>
+                                            <textarea type="text" id="notes" name="notes" class="form-control" placeholder="Inquiry/Questions"></textarea>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -163,29 +240,5 @@
                 </nav>
             </div>
         </footer>
-    </body>
-    <script type="text/javascript">
-        $(function () {
-            $('#btnUpload').on("click", function () {
-                var sizeInKb = parseFloat($('#fuUpload').prop("files")['0'].size / 1024).toFixed(2);
-                var fileName = $('#fuUpload').prop("files")['0'].name;
-                uploadProgress = $('#dvProgress').progressbarManager({
-                    totalValue: sizeInKb,
-                    initValue: '0kb',
-                    animate: true,
-                    stripe: true,
-                    style: 'primary'
-                });
-                var chunk = 0;
-                var uploading = setInterval(function () {
-                    uploadProgress.setValue(chunk);
-                    if (uploadProgress.isComplete()) {
-                        clearInterval(uploading);
-                        uploadProgress.style('success');
-                    }
-                    chunk += 500;
-                }, 500);
-            });
-        });
-    </script>
+    </body> 
 </html>
