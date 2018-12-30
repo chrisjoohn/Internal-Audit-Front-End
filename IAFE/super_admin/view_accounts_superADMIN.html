@@ -49,17 +49,23 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        {{#each array.[0]}}
-                                            <th>{{@key}}</th>
-                                        {{/each}}
+                                        <th>
+                                            First name
+                                        </th>
+                                        <th>
+                                            Last name
+                                        </th>
+                                        <th>
+                                            Email
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {{#each array}}
                                         <tr>
-                                            {{#each this}}
-                                                <td>{{this}}</td>
-                                            {{/each}}
+                                            <td><a class="inside">{{this.fname}}</a></td>
+                                            <td><a class="inside">{{this.lname}}</a></td>
+                                            <td><a class="inside">{{this.email}}</a></td>
                                         </tr>
                                     {{/each}}
                                 </tbody>
@@ -81,21 +87,4 @@
             </nav>
         </div>
     </footer>
-    <script type="text/javascript">
-        $(function () {
-            var tableTemplate = $('#tableTemplate').html();
-            var tableTamplate = Handlebars.compile(templateText);
-
-            var accounts = [
-                {'First Name':'Chris John', 
-                 'Last Name':'Mulingbayan',
-                 'Email': 'chrisjohnmulingbayan@gmail.com'},
-                {'First Name': 'Lydel',
-                 'Last Name': 'Labrador',
-                 'Email': 'lydel27@gmail.com'}
-            ];
-            
-            $(#accounts).html(tableTemplate({array: accounts}));
-        })
-    </script>
 </html>
