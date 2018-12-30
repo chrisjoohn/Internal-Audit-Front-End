@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="super_admin.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    </head>
+    <title>
+        Super Admin
+    </title>
+    <body>  
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Internal Audit Admin</a>
+                </div>
+                <i class="fa fa-sign-out-alt"></i>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-sm-3">
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <h3>Hi Admin!</h3>
+                    </div>
+                    <ul class="unstyled-list components">
+                        <li class="active"><a href="super_admin.html"><i class="fa fa-user-plus fa-2x"> Create Account</i></a></li>
+                        <li><a href="#"><i class="fa fa-users fa-2x"> View Accounts</i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-sm-9">
+                <div class="container-fluid" id="content">
+                    <img id="view-account"src="../images/users.png" alt="add_user" class="img-responsive">
+                    <h2>Admin Accounts</h2>
+                    <div id="accounts">
+                        <script type="text/x-handlebars-template" id="tableTemplate">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            First name
+                                        </th>
+                                        <th>
+                                            Last Name
+                                        </th>
+                                        <th>
+                                            Email
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each array}}
+                                        <tr>
+                                            {{#each this}}
+                                                <td>{{this}}</td>
+                                            {{/each}}
+                                        </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </script>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+                <div class="row" style="margin-top: 0px;">
+                    <p>
+                        © 2018 Polytechnic University of the Philippines
+                    </p>
+                </div>
+            </nav>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        $(function () {
+            var tableTemplate = $('#tableTemplate').html();
+            var tableTamplate = Handlebars.compile(templateText);
+
+            var accounts = [
+                {'First Name':'Chris John', 
+                 'Last Name':'Mulingbayan',
+                 'Email': 'chrisjohnmulingbayan@gmail.com'}
+                {'First Name': 'Lydel',
+                 'Last Name': 'Labrador',
+                 'Email': 'lydel27@gmail.com'}
+            ];
+            
+            $(#accounts).html(tableTemplate({  array: accounts}));
+        })
+    </script>
+</html>
