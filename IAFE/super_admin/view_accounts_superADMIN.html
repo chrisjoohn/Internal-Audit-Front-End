@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
         <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <!--HANDLE BARS AND JQUEY CDN-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
     <title>
         Super Admin
@@ -18,7 +21,11 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Internal Audit Admin</a>
                 </div>
-                <i class="fa fa-sign-out-alt"></i>
+                <div class="navbar-header pull-right" id="sign-out">
+                    <a href="../login_page.html">
+                            <i class="fa fa-sign-out fa-2x"></i>
+                    </a>
+                </div>
             </div>
         </nav>
         <div class="row">
@@ -37,20 +44,14 @@
                 <div class="container-fluid" id="content">
                     <img id="view-account"src="../images/users.png" alt="add_user" class="img-responsive">
                     <h2>Admin Accounts</h2>
-                    <div id="accounts">
+                    <div class="container-fluid" id="accounts">
                         <script type="text/x-handlebars-template" id="tableTemplate">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>
-                                            First name
-                                        </th>
-                                        <th>
-                                            Last Name
-                                        </th>
-                                        <th>
-                                            Email
-                                        </th>
+                                        {{#each array.[0]}}
+                                            <th>{{@key}}</th>
+                                        {{/each}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -88,13 +89,13 @@
             var accounts = [
                 {'First Name':'Chris John', 
                  'Last Name':'Mulingbayan',
-                 'Email': 'chrisjohnmulingbayan@gmail.com'}
+                 'Email': 'chrisjohnmulingbayan@gmail.com'},
                 {'First Name': 'Lydel',
                  'Last Name': 'Labrador',
                  'Email': 'lydel27@gmail.com'}
             ];
             
-            $(#accounts).html(tableTemplate({  array: accounts}));
+            $(#accounts).html(tableTemplate({array: accounts}));
         })
     </script>
 </html>
