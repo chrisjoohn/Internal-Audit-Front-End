@@ -42,7 +42,7 @@
                         <h3>Hi Admin!</h3>
                     </div>
                     <ul class="unstyled-list components">
-                        <li class="active"><a href="view_request.html"><i class="fa fa-file-o fa-2x"> View Requests</i></a></li>
+                        <li class="active" id="view_request"><a href="view_request.html"><i class="fa fa-file-o fa-2x"> View Requests</i></a></li>
                         <li><a href="view_inquiries.html"><i class="fa fa-envelope-o fa-2x"> View Inquiries</i></a></li>
                     </ul>
                 </nav>
@@ -52,7 +52,67 @@
                     <h2 id="title">
                         List of Inquiries
                     </h2>
+                    <div class="form-group" id="filter-container">
+                            <select class="form-control" id="filter">
+                                <option selected>Filter</option>
+                            <option>By Branch</option>
+                            <option>By Sector</option>
+                        </select>
+                    </div>
                     <div class="container-fluid" id="inquiry">
+                        <table>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th id="column_2">
+                                    Branch/Sector
+                                </th>
+                                <th>
+                                    Inquiry
+                                </th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
                         <script type="text/x-handlebars-template">
                             <table>
                                 <thead>
@@ -92,7 +152,20 @@
                             </table>
                         </script>
                     </div>
+                    <div class="pagination-container">
+                        <ul class="pagination pagination-md">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </div>
     </body>
     <footer>
         <div class="container">
