@@ -183,3 +183,13 @@ td,th{
 #Tnumber{
     width: 150px;
 }
+
+#title_1{
+    color: black;
+    margin-top: 30px;
+}
+
+#requestor_detail{
+    padding-left: 15px;
+    padding-right: 15px;
+}
